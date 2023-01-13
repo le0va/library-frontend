@@ -14,7 +14,7 @@ export const ReaderCard = ({ name, phone, address, id, needUpdateHandler }) => {
     const addressChangeHandler = (event) => setAddressInput(event.target.value);
 
     const deleteReaderHandler = () => {
-        fetch(`https://library-backend-nine.vercel.app/readers/${name}`, {
+        fetch(`https://library-backend-nine.vercel.app/readers/${id}`, {
             method: 'DELETE'
         });
         setIsDeleted(true);

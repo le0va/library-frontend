@@ -10,7 +10,7 @@ export const AuthorCard = ({ name, id, needUpdateHandler }) => {
     const nameChangeHandler = (event) => setNameInput(event.target.value);
 
     const deleteAuthorHandler = () => {
-        fetch(`https://library-backend-nine.vercel.app/authors/${name}`, {
+        fetch(`https://library-backend-nine.vercel.app/authors/${id}`, {
             method: 'DELETE'
         });
         setIsDeleted(true);

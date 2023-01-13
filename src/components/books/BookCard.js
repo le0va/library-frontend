@@ -14,7 +14,7 @@ export const BookCard = ({ name, genre, authorId, id, needUpdateHandler }) => {
     const authorIdChangeHandler = (event) => setAuthorIdInput(event.target.value);
 
     const deleteBookHandler = () => {
-        fetch(`https://library-backend-nine.vercel.app/books/${name}`, {
+        fetch(`https://library-backend-nine.vercel.app/books/${id}`, {
             method: 'DELETE'
         });
         setIsDeleted(true);

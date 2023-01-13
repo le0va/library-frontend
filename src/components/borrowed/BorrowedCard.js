@@ -6,7 +6,7 @@ export const BorrowedCard = ({ borrowDate, returnDate, bookId, readerId, needUpd
 
     const [isChangeOpen, setIsChangeOpen] = useState(false);
     const [isDeleted, setIsDeleted] = useState(false);
-    const [returnInput, setReturnInput] = useState('');
+    const [returnInput, setReturnInput] = useState(returnDate);
     const returnChangeHandler = (event) => setReturnInput(event.target.value);
 
     const deleteBorrowedHandler = () => {
@@ -54,7 +54,7 @@ export const BorrowedCard = ({ borrowDate, returnDate, bookId, readerId, needUpd
                     &&
                     <>
                         <input placeholder="Дата позичення" className="card__name-input" value={borrowDate} disabled />
-                        <input placeholder="Дата повернення" className={"input-margin"} value={returnInput} onClick={returnChangeHandler} />
+                        <input placeholder="Дата повернення" className={"input-margin"} value={returnInput} onChange={returnChangeHandler} />
                         <input placeholder="Id книги" className={"input-small"} value={bookId} disabled />
                         <input placeholder="Id читача" className={"input-small"} value={readerId} disabled />
                         <FontAwesomeIcon className="card__cancel-btn" icon={faTimes} onClick={() => setIsChangeOpen(false)} />
